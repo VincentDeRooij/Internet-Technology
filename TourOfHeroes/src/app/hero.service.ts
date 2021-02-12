@@ -1,6 +1,9 @@
 // injectable
 import { Injectable } from '@angular/core';
 
+// import the http connection libs
+import { Observable } from "rxjs";
+
 // import heroes
 import { Hero } from "./hero";
 import { HEROES } from "./heroes";
@@ -16,7 +19,7 @@ export class HeroService {
   constructor() { }
 
   // methods
-  getHeroes() : Hero[] {
+  getHeroes() : Observable<Hero[]> {
     return HEROES;
   }
 }
