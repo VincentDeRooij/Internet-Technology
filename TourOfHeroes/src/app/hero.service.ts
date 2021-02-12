@@ -1,8 +1,11 @@
 // injectable
 import { Injectable } from '@angular/core';
 
+// import message service injectable
+import { MessageService } from "./message.service";
+
 // import the http connection libs
-import { Observable } from "rxjs";
+import { Observable, of } from "rxjs";
 
 // import heroes
 import { Hero } from "./hero";
@@ -16,10 +19,12 @@ export class HeroService {
   // delaraction of variables
 
   // constructor
-  constructor() { }
+  constructor(private messageService: MessageService) { }
 
   // methods
   getHeroes() : Observable<Hero[]> {
-    return HEROES;
+    const heroes = of(HEROES);
+    this.messageService.add('HeroService: fetched heroes');
+    return heroes;
   }
 }
