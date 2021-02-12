@@ -16,14 +16,6 @@ import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
-    HeroSearchComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -37,7 +29,14 @@ import { MessagesComponent } from './messages/messages.component';
       InMemoryDataService, { dataEncapsulation: false }
     )
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    HeroesComponent,
+    HeroDetailComponent,
+    MessagesComponent,
+    HeroSearchComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }
